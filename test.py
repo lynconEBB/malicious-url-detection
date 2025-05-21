@@ -18,9 +18,11 @@ def extract_domain_num(url):
     parsed_url = urlparse(url)
     return parsed_url.netloc.count('.')
 
+
 data["url"] = data["url"].apply(add_protocol)
 data["domain_length"] = data["url"].apply(extract_domain_length)
 # data["domain_num"] = data["url"].apply(extract_domain_num)
+data["length"] = data["url"].apply(len)
 
 
 data.head()
